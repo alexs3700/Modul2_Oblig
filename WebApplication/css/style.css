@@ -1,0 +1,173 @@
+/* CSS styling */
+table, tr, td, th {
+    border: 1px solid khaki;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 2%;
+    
+}
+
+td, th {
+    padding: 3px;
+}
+
+th {
+    background-color: lightseagreen;
+    border: 1px solid darkblue;
+    color: black;
+}
+
+tr:nth-child(even) {
+    background: lightsteelblue;
+}
+
+/* #repsInput, #setsInput {
+        width: 50%;
+} */
+
+body {
+    margin: 0;
+}
+
+.headerTextPosition {
+    text-align: center;
+    position: relative;
+    top: 20%;
+    
+}
+
+
+.header {
+    grid-area: header;
+    background-color: lightgray;
+     
+    /* padding: 20px 0; */
+    font-size: 30px;
+}
+
+
+
+.description {
+    grid-area: description;
+    background-color: lightblue;
+    text-align: center; 
+    /* padding: 20px 0; */
+    font-size: 30px;
+}
+
+  
+.currentWorkout {
+    grid-area: currentWorkout;
+    background-color:   lightblue;;
+    text-align: center; 
+    /* padding: 20px 0; */
+    font-size: 30px;
+}
+
+.workouts {
+    grid-area: workouts;
+    background-color: lightblue;
+    text-align: center; 
+    /* padding: 20px 0; */
+    font-size: 30px;
+}
+
+
+.maxes {
+    grid-area: maxes;
+    background-color: lightblue;
+    text-align: center; 
+    /* padding: 20px 0; */
+    font-size: 30px;
+}
+
+.statistics {
+    grid-area: statistics;
+    background-color: lightblue;
+    text-align: center; 
+    /* padding: 20px 0; */
+    font-size: 30px;
+}
+
+
+
+.footer {
+    grid-area: footer;
+    background-color: lightgray;
+    text-align: right; 
+   
+ 
+    /* padding: 20px 0; */
+    font-size: 30px;
+}
+
+.footerItem {
+    position: relative;
+    top: 75%;
+    right: 0;
+    margin-right: 1vw;
+    padding-bottom: 2%;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: lightgray;
+    text-align: center; 
+    /* padding: 20px 0; */
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+/* 
+#descriptionTable {
+    margin-bottom: 3vh;
+    padding: 2%;
+} */
+
+
+.grid-container {
+    display: grid;
+    width: 75vw;
+    height: 75vh;
+    grid-template-areas: "header header header"
+    "description currentWorkout aside"
+    " maxes currentWorkout aside"   
+    "statistics workouts aside"
+    "footer footer footer";
+
+
+    grid-template-rows: 3fr 3fr 3fr 3fr 1r;
+    grid-template-columns: 3fr 3fr 1fr; 
+
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+/* li {
+    list-style: none;
+} */
+
+.larger {
+    font-size: 30px;
+    
+}
+
+.inlineDiv {
+    display: inline-block;
+}
+
+/* ::selection {
+    background-color: blue;
+    color: white;
+} */
+
+.setColor {
+    background-color: lightseagreen;
+}
+

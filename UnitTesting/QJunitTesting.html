@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>QUnit testing</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.10.0.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id="QUnitTesting"></div>
+    <div id="app"></div>
+    
+
+ 
+        
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.10.0.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script> 
+    <script src="js/view.js"></script>
+    <script>       
+        
+
+
+        
+ 
+
+        QUnit.test("changeMax", function (assert) { 
+            show();
+                setCurrentWorkout(currentWorkout);   
+                listMaxLifts();    
+                createTableForAllWorkouts();
+                calculate();
+                getStatistics();
+
+            // Benchpress is the default excercises that gets changed.
+            // when changeMax() function is called.
+            // Benchpress is the element 0 of the maxes array
+            // model.maxes.
+            // model.maxes[0].excercise is equal 'benncpress'
+            
+
+            let expected = 125;
+
+            changeMax();
+            document.getElementById('app').innerHTML = '';
+
+            let actual = model.maxes[0].max; 
+
+         
+          
+            assert.deepEqual(actual, expected);
+        });
+
+       
+
+        QUnit.test("addNewExcerciseAndMax", function (assert) {  
+            show();
+                setCurrentWorkout(currentWorkout);   
+                listMaxLifts();    
+                createTableForAllWorkouts();
+                calculate();
+                getStatistics();                  
+                
+            
+            let beforeAdded = model.maxes.length;
+            let expected = beforeAdded+1;
+            
+            // One call to the addNewMax() function, i expeced to increase
+            // numbers of excercise maxes with one.
+           
+            addNewMax();
+
+            // Call the show function. And set it to null. After addNewMax()
+            // is called. The only visible then. Is the QUnit test.
+            document.getElementById('app').innerHTML = '';
+
+            let actual = model.maxes.length;
+         
+            assert.deepEqual(expected, actual);
+        });
+       
+
+
+
+    </script>
+</body>
+</html>
